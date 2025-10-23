@@ -54,13 +54,14 @@ const JoinMarketplacePage = () => {
         />
       </Helmet>
 
-      <div className="pt-24 min-h-screen">
-        <section className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-20">
+      <div className="pt-24 min-h-screen mandala-pattern">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="royal-card p-8 md:p-12 rounded-2xl max-w-4xl mx-auto"
             >
               <Store className="mx-auto h-16 w-16 text-emerald-500 mb-4" />
               <h1 className="text-4xl md:text-6xl font-playfair font-bold gradient-text mb-6">
@@ -73,7 +74,7 @@ const JoinMarketplacePage = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               {[
@@ -99,7 +100,7 @@ const JoinMarketplacePage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white/50">
+        <section className="py-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
