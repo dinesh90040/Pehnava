@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Menu, X, User, ShoppingBag, Heart, Package, Store, Video, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  Menu,
+  X,
+  User,
+  ShoppingBag,
+  Heart,
+  Package,
+  Store,
+  Video,
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,9 +31,7 @@ const NavLink = ({ to, children }) => {
     <Link
       to={to}
       className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-        isActive
-          ? 'text-amber-700'
-          : 'text-gray-700 hover:text-amber-600'
+        isActive ? "text-amber-700" : "text-gray-700 hover:text-amber-600"
       }`}
     >
       {children}
@@ -46,15 +54,16 @@ const Navbar = () => {
   const handleFeatureClick = (feature) => {
     toast({
       title: `🚧 ${feature} Coming Soon!`,
-      description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
+      description:
+        "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
     });
   };
 
   const navItems = [
-    { name: 'Women', path: '/marketplace?gender=women' },
-    { name: 'Men', path: '/marketplace?gender=men' },
-    { name: 'Kids', path: '/marketplace?gender=kids' },
-    { name: 'VR Trials', path: '/vr-trials' },
+    { name: "Women", path: "/marketplace?gender=women" },
+    { name: "Men", path: "/marketplace?gender=men" },
+    { name: "Kids", path: "/marketplace?gender=kids" },
+    { name: "VR Trials", path: "/vr-trials" },
   ];
 
   return (
@@ -62,70 +71,96 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src="images\WhatsApp Image 2025-10-08 at 3.05.52 PM.jpeg" 
-              alt="Pehenava Logo - Premium Ethnic Wear" 
+            <img
+              src="images\WhatsApp Image 2025-10-08 at 3.05.52 PM.jpeg"
+              alt="Pehenava Logo - Premium Ethnic Wear"
               className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <NavLink key={item.name} to={item.path}>{item.name}</NavLink>
+              <NavLink key={item.name} to={item.path}>
+                {item.name}
+              </NavLink>
             ))}
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/marketplace-locator">
-              <Button variant="ghost" size="sm" className="text-gray-700 hover:text-amber-600">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-700 hover:text-amber-600"
+              >
                 <MapPin className="h-4 w-4 mr-2" />
                 Locator
               </Button>
             </Link>
             <Link to="/personal-stylist">
-              <Button variant="ghost" size="sm" className="text-gray-700 hover:text-amber-600">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-700 hover:text-amber-600"
+              >
                 <Video className="h-4 w-4 mr-2" />
                 Stylist
               </Button>
             </Link>
             <Link to="/join-marketplace">
-              <Button variant="ghost" size="sm" className="text-gray-700 hover:text-amber-600">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-700 hover:text-amber-600"
+              >
                 <Store className="h-4 w-4 mr-2" />
                 Sell
               </Button>
             </Link>
-            
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full text-gray-700 hover:text-amber-600">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full text-gray-700 hover:text-amber-600"
+                >
                   <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => handleFeatureClick('Profile')}>
+                <DropdownMenuItem onClick={() => handleFeatureClick("Profile")}>
                   <User className="mr-2 h-4 w-4" />
                   <span>Profile</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleFeatureClick('Orders')}>
+                <DropdownMenuItem onClick={() => handleFeatureClick("Orders")}>
                   <Package className="mr-2 h-4 w-4" />
                   <span>Orders</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleFeatureClick('Wishlist')}>
-                  <Heart className="mr-2 h-4 w-4" />
-                  <span>Wishlist</span>
+                <DropdownMenuItem asChild>
+                  <Link to="/wishlist">
+                    <Heart className="mr-2 h-4 w-4" />
+                    <span>Wishlist</span>
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => handleFeatureClick('Login')}>
+                <DropdownMenuItem onClick={() => handleFeatureClick("Login")}>
                   <span>Login / Sign Up</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" size="icon" className="rounded-full text-gray-700 hover:text-amber-600" onClick={() => handleFeatureClick('Shopping Cart')}>
-              <ShoppingBag className="h-5 w-5" />
-            </Button>
+            <Link to="/cart">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full text-gray-700 hover:text-amber-600"
+              >
+                <ShoppingBag className="h-5 w-5" />
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -134,7 +169,11 @@ const Navbar = () => {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -158,18 +197,36 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-3 mt-3 border-t border-amber-200/30 space-y-3">
-                 <Link to="/marketplace-locator" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">
-                    <MapPin className="h-5 w-5 mr-3" /> Marketplace Locator
-                 </Link>
-                 <Link to="/personal-stylist" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">
-                    <Video className="h-5 w-5 mr-3" /> Personal Stylist
-                 </Link>
-                 <Link to="/join-marketplace" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">
-                    <Store className="h-5 w-5 mr-3" /> Join as a Shop
-                 </Link>
-                 <button onClick={() => { handleFeatureClick('Login'); setIsOpen(false); }} className="w-full flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md">
-                    <User className="h-5 w-5 mr-3" /> Login / Profile
-                 </button>
+                <Link
+                  to="/marketplace-locator"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md"
+                >
+                  <MapPin className="h-5 w-5 mr-3" /> Marketplace Locator
+                </Link>
+                <Link
+                  to="/personal-stylist"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md"
+                >
+                  <Video className="h-5 w-5 mr-3" /> Personal Stylist
+                </Link>
+                <Link
+                  to="/join-marketplace"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md"
+                >
+                  <Store className="h-5 w-5 mr-3" /> Join as a Shop
+                </Link>
+                <button
+                  onClick={() => {
+                    handleFeatureClick("Login");
+                    setIsOpen(false);
+                  }}
+                  className="w-full flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md"
+                >
+                  <User className="h-5 w-5 mr-3" /> Login / Profile
+                </button>
               </div>
             </div>
           </motion.div>
