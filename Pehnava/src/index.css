@@ -1,0 +1,181 @@
+
+/* Tailwind CSS Directives */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Tailwind base styles */
+@tailwind base;
+
+/* Tailwind component classes */
+@tailwind components;
+
+/* Tailwind utility classes */
+@tailwind utilities;
+
+:root {
+  --primary-maroon: #8B1538;
+  --primary-gold: #D4AF37;
+  --cream: #F5F5DC;
+  --deep-purple: #4A1A4A;
+  --rose-gold: #E8B4B8;
+  --royal-amber: #fbbf24;
+  --royal-rose: #ec4899;
+  --royal-purple: #a855f7;
+  --royal-emerald: #10b981;
+}
+
+body {
+  @apply bg-gradient-to-br from-amber-50 via-rose-50 to-purple-50 text-gray-900;
+  font-family: 'Inter', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-maroon), var(--primary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.royal-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.lotus-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.mandala-pattern {
+  background-image: url("https://wallpaper.dog/large/20468234.jpg");
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.sparkling-black-bg {
+  background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: move-twink-back 200s linear infinite;
+}
+
+
+.stylist-pattern {
+  background-image: url("https://wallpapercat.com/w/full/c/b/8/939341-2160x3840-phone-4k-mandala-wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.ethnic-border {
+  border-image: linear-gradient(45deg, var(--primary-gold), var(--primary-maroon)) 1;
+}
+
+/* Premium Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
+    transform: scale(1.05);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.pulse-glow-animation {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--royal-amber), var(--royal-rose));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--royal-rose), var(--royal-purple));
+}
+
+/* Premium Text Effects */
+.premium-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.gradient-border {
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--royal-amber), var(--royal-rose), var(--royal-purple)) border-box;
+  border-radius: 12px;
+}
+
+/* Premium Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-glass-effect {
+  background: rgba(25, 25, 25, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Royal Gradient Backgrounds */
+.royal-gradient-1 {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706, #b45309);
+}
+
+.royal-gradient-2 {
+  background: linear-gradient(135deg, #ec4899, #be185d, #9d174d);
+}
+
+.royal-gradient-3 {
+  background: linear-gradient(135deg, #a855f7, #7c3aed, #6d28d9);
+}
+
+.royal-gradient-4 {
+  background: linear-gradient(135deg, #10b981, #059669, #047857);
+}

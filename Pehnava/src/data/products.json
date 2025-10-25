@@ -1,0 +1,93 @@
+[
+  {
+    "id": 101,
+    "name": "Royal Silk Saree",
+    "category": "Wedding Wear",
+    "image": "/images/Royal Silk Saree.png",
+    "price": 25000
+  },
+  {
+    "id": 102,
+    "name": "Embroidered Sherwani",
+    "category": "Traditional Wear",
+    "image": "/images/Embroidered Sherwani.png",
+    "price": 30000
+  },
+  {
+    "id": 103,
+    "name": "Bridal Lehenga Set",
+    "category": "Bridal Wear",
+    "image": "/images/Bridal Lehenga Set.png",
+    "price": 25000
+  },
+  {
+    "id": 104,
+    "name": "Casual Kurta Pajama",
+    "category": "Casual Wear",
+    "image": "/images/Casual Kurta Pajama.png",
+    "price": 2500
+  },
+  {
+    "id": 105,
+    "name": "Banarasi Silk Saree",
+    "category": "Festive Wear",
+    "image": "/images/sarees/banarasi-1.jpg",
+    "price": 22000
+  },
+  {
+    "id": 106,
+    "name": "Festive Anarkali Suit",
+    "category": "Festive Wear",
+    "image": "/images/Festive Anarkali Suit.png",
+    "price": 8000
+  },
+  {
+    "id": 107,
+    "name": "Indo Western Suit",
+    "category": "Party Wear",
+    "image": "/images/Indo Western Suit.png",
+    "price": 6000
+  },
+  {
+    "id": 108,
+    "name": "Linen Kurta",
+    "category": "Casual Wear",
+    "image": "/images/Linen Kurta.png",
+    "price": 1800
+  },
+  {
+    "id": 109,
+    "name": "Men's Blazer",
+    "category": "Formal Wear",
+    "image": "/images/mens/blazer-1.jpg",
+    "price": 7000
+  },
+  {
+    "id": 110,
+    "name": "Cotton Saree",
+    "category": "Casual Wear",
+    "image": "/images/sarees/cotton-1.jpg",
+    "price": 2500
+  },
+  {
+    "id": 201,
+    "name": "Boys Sherwani Set",
+    "category": "Traditional Wear",
+    "image": "/images/kids/boys-sherwani-1.jpg",
+    "price": 4000
+  },
+  {
+    "id": 202,
+    "name": "Girls Lehenga Choli",
+    "category": "Festive Wear",
+    "image": "/images/kids/girls-lehenga-1.jpg",
+    "price": 3500
+  },
+  {
+    "id": 203,
+    "name": "Birthday Princess Gown",
+    "category": "Party Wear",
+    "image": "/images/Birthday Princess Gown.png",
+    "price": 2800
+  }
+]
